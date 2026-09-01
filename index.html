@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Datafluencer Toolkit</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html">Datafluencer Toolkit</a>
+  </header>
+
+  <div class="wrap">
+    <h1>Datafluencer Toolkit</h1>
+    <p class="lede">A structured training program for data professionals whose work deserves more visibility.</p>
+
+    <h2>Module 1: Foundations</h2>
+    <ul class="lesson-list" data-module="1">
+      <li data-lesson-id="lesson-01">
+        <a href="lessons/lesson-01.html">Lesson 1: Finding Your Data Story</a>
+        <span class="status">Not started</span>
+      </li>
+      <li data-lesson-id="lesson-02">
+        <a href="lessons/lesson-02.html">Lesson 2: Your lesson title here</a>
+        <span class="status">Not started</span>
+      </li>
+    </ul>
+
+    <!--
+      To add a new module, copy the <h2> + <ul class="lesson-list"> block above
+      and add matching <li data-lesson-id="..."> entries. Each data-lesson-id
+      must match the data-lesson-id used on that lesson's <div id="quiz"> so
+      progress tracking lines up.
+    -->
+  </div>
+
+  <script>
+    (function () {
+      function getProgress() {
+        try {
+          return JSON.parse(localStorage.getItem("course-progress") || "{}");
+        } catch (e) {
+          return {};
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const progress = getProgress();
+        document.querySelectorAll(".lesson-list li[data-lesson-id]").forEach(function (li) {
+          const id = li.dataset.lessonId;
+          const statusEl = li.querySelector(".status");
+          const record = progress[id];
+          if (record && record.passed) {
+            statusEl.textContent = `Completed (${record.score}/${record.total})`;
+            statusEl.classList.add("done");
+          } else if (record) {
+            statusEl.textContent = `Attempted (${record.score}/${record.total})`;
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
