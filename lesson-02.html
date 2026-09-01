@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 2: Your lesson title here — Datafluencer Toolkit</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="../index.html">Datafluencer Toolkit</a>
+  </header>
+
+  <div class="wrap">
+    <nav class="breadcrumbs"><a href="../index.html">Course home</a> / Module 1 / Lesson 2</nav>
+
+    <h1>Lesson 2: Your lesson title here</h1>
+    <p class="lede">Module 1 · Foundations · ~__ min video</p>
+
+    <!--
+      Replace VIDEO_ID with the id from your YouTube URL, e.g.
+      https://www.youtube.com/watch?v=VIDEO_ID
+      Unlisted videos work fine here — they just won't show up in YouTube search.
+    -->
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+        title="Lesson 1 video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <div class="lesson-notes">
+      <h2 style="margin-top:0">Notes</h2>
+      <p>
+        Put your lesson write-up, key takeaways, and any downloadable resources
+        here. This section is plain HTML, so anything you'd normally write in
+        Kajabi's text editor can be pasted in and cleaned up.
+      </p>
+    </div>
+
+    <div class="quiz" id="quiz" data-lesson-id="lesson-02"></div>
+    <script type="application/json" id="quiz-data">
+      [
+        {
+          "question": "Replace with your question text",
+          "options": [
+            "Option A",
+            "Option B",
+            "Option C"
+          ],
+          "correctIndex": 0,
+          "explain": "Optional: shown after the learner submits, explaining the correct answer."
+        }
+      ]
+    </script>
+
+    <div class="lesson-nav">
+      <a href="lesson-01.html">&larr; Previous lesson</a>
+      <a href="../index.html">Course home &rarr;</a>
+    </div>
+  </div>
+
+  <script src="../assets/js/quiz.js"></script>
+</body>
+</html>
